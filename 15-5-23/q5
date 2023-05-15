@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int isPalindrome(int arr[], int size) {
+    int i, j;
+
+    for (i = 0, j = size - 1; i < j; i++, j--) {
+        if (arr[i] != arr[j]) {
+            return 0;  
+        }
+    }
+
+    return 1; 
+}
+
+int main() {
+    int arr[SIZE] = {1, 2, 3, 4, 5, 5, 4, 3, 2, 1};
+
+    if (isPalindrome(arr, SIZE)) {
+        printf("The array is a palindrome.\n");
+    } else {
+        printf("The array is not a palindrome.\n");
+    }
+
+    return 0;
+}

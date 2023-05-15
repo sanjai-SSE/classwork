@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int isDiagonalMatrix(int matrix[SIZE][SIZE]) {
+    int i, j;
+
+    for (i = 0; i < SIZE; i++) {
+        for (j = 0; j < SIZE; j++) {
+            if (i != j && matrix[i][j] != 0) {
+                return 0;  
+            }
+        }
+    }
+
+    return 1;  
+}
+
+int main() {
+    int matrix[SIZE][SIZE] = {{1, 0, 0},
+                              {0, 2, 0},
+                              {0, 0, 3}};
+
+    if (isDiagonalMatrix(matrix)) {
+        printf("The matrix is diagonal.\n");
+    } else {
+        printf("The matrix is not diagonal.\n");
+    }
+
+    return 0;
+}

@@ -1,0 +1,47 @@
+#include <stdio.h>
+
+#define ROWS 3
+#define COLS 3
+
+void multiplyMatrixByScalar(int matrix[][COLS], int scalar) {
+    int i, j;
+    
+    for (i = 0; i < ROWS; i++) {
+        for (j = 0; j < COLS; j++) {
+            matrix[i][j] *= scalar;
+        }
+    }
+}
+
+void printMatrix(int matrix[][COLS]) {
+    int i, j;
+    
+    for (i = 0; i < ROWS; i++) {
+        for (j = 0; j < COLS; j++) {
+            printf("%d ", matrix[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+int main() {
+    int matrix[ROWS][COLS] = {
+        {1, 2, 3},
+        {4, 5, 6},
+        {7, 8, 9}
+    };
+    int scalar;
+    
+    printf("Enter a scalar value: ");
+    scanf("%d", &scalar);
+    
+    printf("Original matrix:\n");
+    printMatrix(matrix);
+    
+    multiplyMatrixByScalar(matrix, scalar);
+    
+    printf("Matrix after scalar multiplication:\n");
+    printMatrix(matrix);
+    
+    return 0;
+}
